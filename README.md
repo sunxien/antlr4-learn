@@ -1,4 +1,4 @@
-# Antlr4 Learn
+# [Antlr4 Learn](https://www.antlr.org/)
 
 1. Install Antlr4 Tools on MacOS
    2. ```pip3 install antlr4-tools```
@@ -9,3 +9,13 @@
 3. Getting Started with Antlr4
    4. URL: ```https://github.com/antlr/antlr4/blob/master/doc/getting-started.md```
    5. Java Target: ```https://github.com/antlr/antlr4/blob/master/doc/java-target.md```
+
+4. Go to [Antlr4-Lab](http://lab.antlr.org/)
+
+
+
+# References
+1. [The Definitive ANTLR 4 Reference](https://pragprog.com/titles/tpantlr2/the-definitive-antlr-4-reference/)
+2. [Antlr4 Documentation](https://github.com/antlr/antlr4/blob/master/doc/index.md)
+3. [Antlr4 issue list](https://github.com/antlr/antlr4/issues)
+
