@@ -38,8 +38,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>22</source>
+                    <target>22</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
@@ -57,11 +57,20 @@
                 <version>4.13.2</version>
                 <executions>
                     <execution>
+                        <id>antlr</id>
                         <goals>
                             <goal>antlr4</goal>
                         </goals>
+                        <phase>generate-sources</phase>
                     </execution>
                 </executions>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/main/resources/</sourceDirectory>
+                    <outputDirectory>${basedir}/src/main/java/org/apache/antlr4/</outputDirectory>
+                    <listener>true</listener>
+                    <visitor>true</visitor>
+                    <treatWarningsAsErrors>true</treatWarningsAsErrors>
+                </configuration>
             </plugin>
         </plugins>
 

@@ -12,6 +12,21 @@
 
 4. Go to [Antlr4-Lab](http://lab.antlr.org/)
 
+5. Introduce to Grammar File
+   6. ```antlrv4
+      /** Optional javadoc style comment */
+      [lexer|parser] grammar Name;
+      options {...}
+      import ...;
+      tokens {...}
+      channels {...} // lexer only
+      @actionName {...}
+      rule1 // parser and lexer rules, possibly intermingled
+      ...
+      ruleN
+      ```
+
+
 
 
 # References

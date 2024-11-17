@@ -1,0 +1,26 @@
+grammar GrammarName;
+
+options {
+    output=AST;
+    language=Java;
+    tokenVocab=xxxLexer;
+}
+
+import {
+}
+
+tokens {
+}
+
+channels {
+}
+
+@header {
+package org.apache.antlr4;
+}
+
+@members {
+}
+
+@after {
+}
