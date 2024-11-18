@@ -1,4 +1,4 @@
-// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/CommonLexer.g4 by ANTLR 4.13.2
+// Generated from JavaRefactor.g4 by ANTLR 4.13.2
 
 package org.apache.antlr4;
 
@@ -12,7 +12,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
-public class CommonLexer extends Lexer {
+public class JavaRefactorLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -107,13 +107,13 @@ public class CommonLexer extends Lexer {
 	}
 
 
-	public CommonLexer(CharStream input) {
+	public JavaRefactorLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "CommonLexer.g4"; }
+	public String getGrammarFileName() { return "JavaRefactor.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

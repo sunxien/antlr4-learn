@@ -30,5 +30,5 @@ expr : expr (MUL | DIV) expr # MulAndDiv_Label
      | expr (ADD | SUB) expr # AddAndSub_Label
      | DIGIT # Number_Label
      | ID # Variable_Label
-     | LEFT_PARENTHEIS expr RIGHT_PARENTHESIS # ComplexExpr_Label
+     | L_PARENTHESIS expr R_PARENTHESIS # ComplexExpr_Label
      ;

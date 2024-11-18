@@ -19,8 +19,14 @@ public class ExpressionParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		ID=1, DIGIT=2, NEW_LINE=3, ADD=4, SUB=5, MUL=6, DIV=7, EQUAL=8, LEFT_PARENTHEIS=9, 
-		RIGHT_PARENTHESIS=10;
+		WS=1, DIGIT=2, NEW_LINE=3, DOT=4, COMMA=5, SEMICOLON=6, AT_SYMBOL=7, ADD=8, 
+		SUB=9, MUL=10, DIV=11, EQUAL=12, SINGLE_QUOTA=13, DOUBLE_QUOTA=14, SLASH=15, 
+		BACK_SLASH=16, STAR=17, ASSIGN=18, L_PARENTHESIS=19, R_PARENTHESIS=20, 
+		L_SQUARE_BRACKET=21, R_SQUARE_BRACKET=22, L_BRACE=23, R_BRACE=24, L_ANGLE_BRACKET=25, 
+		R_ANGLE_BRACKET=26, PUBLIC=27, PRIVATE=28, PROTECTED=29, DEFAULT=30, VOID=31, 
+		NULL=32, EXTENDS=33, IMPLEMENTS=34, ABSTRACT=35, STATIC=36, FINAL=37, 
+		CLASS=38, ENUM=39, INTERFACE=40, RETURN=41, PACKAGE=42, IMPORT=43, THROWS=44, 
+		ID=45, QUALIFIER_NAME=46, STRING_LITERAL=47, ARRAY_TYPE=48;
 	public static final int
 		RULE_prog = 0, RULE_stat = 1, RULE_expr = 2;
 	private static String[] makeRuleNames() {
@@ -32,14 +38,25 @@ public class ExpressionParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, null, "'+'", "'-'", "'*'", "'/'", "'='", "'('", "')'"
+			null, null, null, null, "'.'", "','", "';'", "'@'", "'+'", "'-'", "'*'", 
+			"'/'", "'='", "'''", "'\"'", null, "'\\'", null, null, "'('", "')'", 
+			"'['", "']'", "'{'", "'}'", "'<'", "'>'", "'public'", "'private'", "'protected'", 
+			"'default'", "'void'", "'null'", "'extends'", "'implements'", "'abstract'", 
+			"'static'", "'final'", "'class'", "'enum'", "'interface'", "'return'", 
+			"'package'", "'import'", "'throws'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "ID", "DIGIT", "NEW_LINE", "ADD", "SUB", "MUL", "DIV", "EQUAL", 
-			"LEFT_PARENTHEIS", "RIGHT_PARENTHESIS"
+			null, "WS", "DIGIT", "NEW_LINE", "DOT", "COMMA", "SEMICOLON", "AT_SYMBOL", 
+			"ADD", "SUB", "MUL", "DIV", "EQUAL", "SINGLE_QUOTA", "DOUBLE_QUOTA", 
+			"SLASH", "BACK_SLASH", "STAR", "ASSIGN", "L_PARENTHESIS", "R_PARENTHESIS", 
+			"L_SQUARE_BRACKET", "R_SQUARE_BRACKET", "L_BRACE", "R_BRACE", "L_ANGLE_BRACKET", 
+			"R_ANGLE_BRACKET", "PUBLIC", "PRIVATE", "PROTECTED", "DEFAULT", "VOID", 
+			"NULL", "EXTENDS", "IMPLEMENTS", "ABSTRACT", "STATIC", "FINAL", "CLASS", 
+			"ENUM", "INTERFACE", "RETURN", "PACKAGE", "IMPORT", "THROWS", "ID", "QUALIFIER_NAME", 
+			"STRING_LITERAL", "ARRAY_TYPE"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -140,7 +157,7 @@ public class ExpressionParser extends Parser {
 				setState(9); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 526L) != 0) );
+			} while ( (((_la) & ~0x3f) == 0 && ((1L << _la) & 35184372613132L) != 0) );
 			}
 		}
 		catch (RecognitionException re) {
@@ -363,11 +380,11 @@ public class ExpressionParser extends Parser {
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class ComplexExpr_LabelContext extends ExprContext {
-		public TerminalNode LEFT_PARENTHEIS() { return getToken(ExpressionParser.LEFT_PARENTHEIS, 0); }
+		public TerminalNode L_PARENTHESIS() { return getToken(ExpressionParser.L_PARENTHESIS, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode RIGHT_PARENTHESIS() { return getToken(ExpressionParser.RIGHT_PARENTHESIS, 0); }
+		public TerminalNode R_PARENTHESIS() { return getToken(ExpressionParser.R_PARENTHESIS, 0); }
 		public ComplexExpr_LabelContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -440,17 +457,17 @@ public class ExpressionParser extends Parser {
 				match(ID);
 				}
 				break;
-			case LEFT_PARENTHEIS:
+			case L_PARENTHESIS:
 				{
 				_localctx = new ComplexExpr_LabelContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(25);
-				match(LEFT_PARENTHEIS);
+				match(L_PARENTHESIS);
 				setState(26);
 				expr(0);
 				setState(27);
-				match(RIGHT_PARENTHESIS);
+				match(R_PARENTHESIS);
 				}
 				break;
 			default:
@@ -546,36 +563,36 @@ public class ExpressionParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\n+\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
-		"\u0002\u0007\u0002\u0001\u0000\u0004\u0000\b\b\u0000\u000b\u0000\f\u0000"+
-		"\t\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u0015\b\u0001\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0003\u0002\u001e\b\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
-		"\u0001\u0002\u0001\u0002\u0005\u0002&\b\u0002\n\u0002\f\u0002)\t\u0002"+
-		"\u0001\u0002\u0000\u0001\u0004\u0003\u0000\u0002\u0004\u0000\u0002\u0001"+
-		"\u0000\u0006\u0007\u0001\u0000\u0004\u0005.\u0000\u0007\u0001\u0000\u0000"+
-		"\u0000\u0002\u0014\u0001\u0000\u0000\u0000\u0004\u001d\u0001\u0000\u0000"+
-		"\u0000\u0006\b\u0003\u0002\u0001\u0000\u0007\u0006\u0001\u0000\u0000\u0000"+
-		"\b\t\u0001\u0000\u0000\u0000\t\u0007\u0001\u0000\u0000\u0000\t\n\u0001"+
-		"\u0000\u0000\u0000\n\u0001\u0001\u0000\u0000\u0000\u000b\f\u0003\u0004"+
-		"\u0002\u0000\f\r\u0005\u0003\u0000\u0000\r\u0015\u0001\u0000\u0000\u0000"+
-		"\u000e\u000f\u0005\u0001\u0000\u0000\u000f\u0010\u0005\b\u0000\u0000\u0010"+
-		"\u0011\u0003\u0004\u0002\u0000\u0011\u0012\u0005\u0003\u0000\u0000\u0012"+
-		"\u0015\u0001\u0000\u0000\u0000\u0013\u0015\u0005\u0003\u0000\u0000\u0014"+
-		"\u000b\u0001\u0000\u0000\u0000\u0014\u000e\u0001\u0000\u0000\u0000\u0014"+
-		"\u0013\u0001\u0000\u0000\u0000\u0015\u0003\u0001\u0000\u0000\u0000\u0016"+
-		"\u0017\u0006\u0002\uffff\uffff\u0000\u0017\u001e\u0005\u0002\u0000\u0000"+
-		"\u0018\u001e\u0005\u0001\u0000\u0000\u0019\u001a\u0005\t\u0000\u0000\u001a"+
-		"\u001b\u0003\u0004\u0002\u0000\u001b\u001c\u0005\n\u0000\u0000\u001c\u001e"+
-		"\u0001\u0000\u0000\u0000\u001d\u0016\u0001\u0000\u0000\u0000\u001d\u0018"+
-		"\u0001\u0000\u0000\u0000\u001d\u0019\u0001\u0000\u0000\u0000\u001e\'\u0001"+
-		"\u0000\u0000\u0000\u001f \n\u0005\u0000\u0000 !\u0007\u0000\u0000\u0000"+
-		"!&\u0003\u0004\u0002\u0006\"#\n\u0004\u0000\u0000#$\u0007\u0001\u0000"+
-		"\u0000$&\u0003\u0004\u0002\u0005%\u001f\u0001\u0000\u0000\u0000%\"\u0001"+
-		"\u0000\u0000\u0000&)\u0001\u0000\u0000\u0000\'%\u0001\u0000\u0000\u0000"+
-		"\'(\u0001\u0000\u0000\u0000(\u0005\u0001\u0000\u0000\u0000)\'\u0001\u0000"+
-		"\u0000\u0000\u0005\t\u0014\u001d%\'";
+		"\u0004\u00010+\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002\u0002"+
+		"\u0007\u0002\u0001\u0000\u0004\u0000\b\b\u0000\u000b\u0000\f\u0000\t\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u0015\b\u0001\u0001\u0002\u0001"+
+		"\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0003"+
+		"\u0002\u001e\b\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001"+
+		"\u0002\u0001\u0002\u0005\u0002&\b\u0002\n\u0002\f\u0002)\t\u0002\u0001"+
+		"\u0002\u0000\u0001\u0004\u0003\u0000\u0002\u0004\u0000\u0002\u0001\u0000"+
+		"\n\u000b\u0001\u0000\b\t.\u0000\u0007\u0001\u0000\u0000\u0000\u0002\u0014"+
+		"\u0001\u0000\u0000\u0000\u0004\u001d\u0001\u0000\u0000\u0000\u0006\b\u0003"+
+		"\u0002\u0001\u0000\u0007\u0006\u0001\u0000\u0000\u0000\b\t\u0001\u0000"+
+		"\u0000\u0000\t\u0007\u0001\u0000\u0000\u0000\t\n\u0001\u0000\u0000\u0000"+
+		"\n\u0001\u0001\u0000\u0000\u0000\u000b\f\u0003\u0004\u0002\u0000\f\r\u0005"+
+		"\u0003\u0000\u0000\r\u0015\u0001\u0000\u0000\u0000\u000e\u000f\u0005-"+
+		"\u0000\u0000\u000f\u0010\u0005\f\u0000\u0000\u0010\u0011\u0003\u0004\u0002"+
+		"\u0000\u0011\u0012\u0005\u0003\u0000\u0000\u0012\u0015\u0001\u0000\u0000"+
+		"\u0000\u0013\u0015\u0005\u0003\u0000\u0000\u0014\u000b\u0001\u0000\u0000"+
+		"\u0000\u0014\u000e\u0001\u0000\u0000\u0000\u0014\u0013\u0001\u0000\u0000"+
+		"\u0000\u0015\u0003\u0001\u0000\u0000\u0000\u0016\u0017\u0006\u0002\uffff"+
+		"\uffff\u0000\u0017\u001e\u0005\u0002\u0000\u0000\u0018\u001e\u0005-\u0000"+
+		"\u0000\u0019\u001a\u0005\u0013\u0000\u0000\u001a\u001b\u0003\u0004\u0002"+
+		"\u0000\u001b\u001c\u0005\u0014\u0000\u0000\u001c\u001e\u0001\u0000\u0000"+
+		"\u0000\u001d\u0016\u0001\u0000\u0000\u0000\u001d\u0018\u0001\u0000\u0000"+
+		"\u0000\u001d\u0019\u0001\u0000\u0000\u0000\u001e\'\u0001\u0000\u0000\u0000"+
+		"\u001f \n\u0005\u0000\u0000 !\u0007\u0000\u0000\u0000!&\u0003\u0004\u0002"+
+		"\u0006\"#\n\u0004\u0000\u0000#$\u0007\u0001\u0000\u0000$&\u0003\u0004"+
+		"\u0002\u0005%\u001f\u0001\u0000\u0000\u0000%\"\u0001\u0000\u0000\u0000"+
+		"&)\u0001\u0000\u0000\u0000\'%\u0001\u0000\u0000\u0000\'(\u0001\u0000\u0000"+
+		"\u0000(\u0005\u0001\u0000\u0000\u0000)\'\u0001\u0000\u0000\u0000\u0005"+
+		"\t\u0014\u001d%\'";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

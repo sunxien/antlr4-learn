@@ -1,13 +1,23 @@
 lexer grammar CommonLexer;
 
+options {
+    caseInsensitive = true;
+}
+
 @header{
 package org.apache.antlr4;
 }
 
-ID : [a-zA-Z]+ ;
+WS : [ \t\r\n]+ -> channel(HIDDEN);
 
 DIGIT : [0-9]+ ;
 NEW_LINE : '\r'?'\n' ;
+
+DOT : '.' ;
+COMMA : ',' ;
+SEMICOLON : ';' ;
+
+AT_SYMBOL : '@' ;
 
 ADD : '+' ;
 SUB : '-' ;
@@ -16,5 +26,56 @@ DIV : '/' ;
 
 EQUAL : '=' ;
 
-LEFT_PARENTHEIS : '(' ;
-RIGHT_PARENTHESIS : ')' ;
+SINGLE_QUOTA : '\'' ;
+DOUBLE_QUOTA : '"' ;
+
+SLASH : DIV ;
+BACK_SLASH : '\\' ;
+STAR : MUL ;
+ASSIGN : EQUAL;
+
+L_PARENTHESIS : '(' ;
+R_PARENTHESIS : ')' ;
+
+L_SQUARE_BRACKET : '[' ;
+R_SQUARE_BRACKET : ']' ;
+
+L_BRACE : '{' ;
+R_BRACE : '}' ;
+
+L_ANGLE_BRACKET : '<' ;
+R_ANGLE_BRACKET : '>' ;
+
+PUBLIC : 'public' ;
+PRIVATE : 'private' ;
+PROTECTED : 'protected' ;
+DEFAULT : 'default' ;
+
+VOID : 'void' ;
+NULL : 'null' ;
+
+EXTENDS : 'extends' ;
+IMPLEMENTS : 'implements' ;
+
+ABSTRACT : 'abstract' ;
+STATIC : 'static' ;
+FINAL : 'final' ;
+
+CLASS : 'class' ;
+ENUM : 'enum' ;
+INTERFACE : 'interface' ;
+RETURN : 'return' ;
+
+PACKAGE : 'package' ;
+IMPORT : 'import' ;
+THROWS : 'throws' ;
+
+ID : [^A-Z][a-z0-9]+ ;
+
+QUALIFIER_NAME : [^a-z0-9]+(DOT[a-z0-9]+)*;
+STRING_LITERAL : ID_LITERAL ;
+
+ARRAY_TYPE : QUALIFIER_NAME L_SQUARE_BRACKET R_SQUARE_BRACKET ;
+
+//
+fragment ID_LITERAL        : [A-Z_$0-9\u0080-\uFFFF]*? [A-Z_$\u0080-\uFFFF]+? [A-Z_$0-9\u0080-\uFFFF]*;
