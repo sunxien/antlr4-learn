@@ -1,0 +1,22 @@
+lexer grammar XMLLexer;
+
+OPEN : '<' -> pushMode(INSIDE);
+
+COMMENT : '<!--' .*? '-->' -> skip ;
+TEXT : ~('<'|'&')+ ;
+ENTITY_REF : '&' [a-z]+ ';' ;
+
+// ------------------------
+mode INSIDE;
+
+CLOSE : '>' ;
+SLASH_CLOSE : '/>' ;
+EQUALS : '=' ;
+STRING : '"' .*? '"' ;
+SLASH_NAME : '/' Name ;
+Name : ALPHA (ALPHA|DIGIT)* ;
+
+WS : [ \r\t\n] -> skip ;
+
+fragment ALPHA : [a-zA-Z] ;
+fragment DIGIT : [0-9] ;

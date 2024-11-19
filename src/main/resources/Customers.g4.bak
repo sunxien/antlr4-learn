@@ -1,0 +1,37 @@
+///* parser */ grammar Customers;
+//
+//options {
+//    caseInsensitive = true;
+//    // tokenVocab = CommonLexer;
+//}
+//
+//import CommonLexer;
+//// tokens
+//// channel
+//
+////@header{
+////package org.apache.antlr4;
+////}
+//
+//@parser::members {
+//int col;
+//public CustomersParser(TokenStream input, int col) {
+//    this(input);
+//    this.col = col;
+//}
+//}
+//
+//customers
+//: (customer NEW_LINE)+
+//;
+//
+//customer
+//locals [int i=0]
+//: ( STUFF {
+//        $i++;
+//        if ($i == col) {
+//            System.out.println($STUFF.text);
+//        }
+//    }
+//  )+
+//;

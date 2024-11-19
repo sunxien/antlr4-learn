@@ -1,8 +1,0 @@
-LEFT_BRACE=1
-RIGHT_BRACE=2
-COMMA=3
-DIGIT=4
-WS=5
-'{'=1
-'}'=2
-','=3

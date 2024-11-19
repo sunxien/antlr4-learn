@@ -1,4 +1,4 @@
-// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/Ambiguous.g4 by ANTLR 4.13.2
+// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/Ambiguous.g4.bak by ANTLR 4.13.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -72,7 +72,7 @@ public class AmbiguousParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Ambiguous.g4"; }
+	public String getGrammarFileName() { return "Ambiguous.g4.bak"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

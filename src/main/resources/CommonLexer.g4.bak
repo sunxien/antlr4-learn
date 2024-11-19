@@ -1,14 +1,18 @@
 lexer grammar CommonLexer;
 
 options {
-    caseInsensitive = true;
+    // caseInsensitive = true;
 }
 
 @header{
 package org.apache.antlr4;
 }
 
-WS : [ \t\r\n]+ -> channel(HIDDEN);
+// WS : [ \t\r\n]+ -> skip;
+// WS : [ \t\r\n]+ -> channel(HIDDEN);
+
+// TAB : '\t' -> skip ; // Used for testing actions
+// STUFF : (~[\t\r\n])+ ; // Used for testing actions
 
 DIGIT : [0-9]+ ;
 NEW_LINE : '\r'?'\n' ;
@@ -70,12 +74,11 @@ PACKAGE : 'package' ;
 IMPORT : 'import' ;
 THROWS : 'throws' ;
 
-ID : [^A-Z][a-z0-9]+ ;
+//// Used for Java Refactor.
+//ID : [^A-Z][a-z0-9]+ ;
+//QUALIFIER_NAME : [^a-z0-9]+(DOT[a-z0-9]+)*;
+//STRING_LITERAL : ID_LITERAL ;
+//ARRAY_TYPE : QUALIFIER_NAME L_SQUARE_BRACKET R_SQUARE_BRACKET ;
 
-QUALIFIER_NAME : [^a-z0-9]+(DOT[a-z0-9]+)*;
-STRING_LITERAL : ID_LITERAL ;
 
-ARRAY_TYPE : QUALIFIER_NAME L_SQUARE_BRACKET R_SQUARE_BRACKET ;
-
-//
-fragment ID_LITERAL        : [A-Z_$0-9\u0080-\uFFFF]*? [A-Z_$\u0080-\uFFFF]+? [A-Z_$0-9\u0080-\uFFFF]*;
+//fragment ID_LITERAL        : [A-Z_$0-9\u0080-\uFFFF]*? [A-Z_$\u0080-\uFFFF]+? [A-Z_$0-9\u0080-\uFFFF]*;

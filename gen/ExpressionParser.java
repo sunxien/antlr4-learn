@@ -1,4 +1,4 @@
-// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/Expression.g4 by ANTLR 4.13.2
+// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/Expression.g4.bak by ANTLR 4.13.2
 
 package org.apache.antlr4;
 
@@ -77,7 +77,7 @@ public class ExpressionParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Expression.g4"; }
+	public String getGrammarFileName() { return "Expression.g4.bak"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
