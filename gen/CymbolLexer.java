@@ -97,7 +97,7 @@ public class CymbolLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "CymbolLexer.g4"; }
+	public String getGrammarFileName() { return "src/main/antlr4/CymbolLexer.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

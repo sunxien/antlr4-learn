@@ -84,7 +84,7 @@ public class AmbiguousLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Ambiguous.g4.bak"; }
+	public String getGrammarFileName() { return "src/main/antlr4/Ambiguous.g4.bak"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

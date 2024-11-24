@@ -33,4 +33,6 @@
 1. [The Definitive ANTLR 4 Reference](https://pragprog.com/titles/tpantlr2/the-definitive-antlr-4-reference/)
 2. [Antlr4 Documentation](https://github.com/antlr/antlr4/blob/master/doc/index.md)
 3. [Antlr4 issue list](https://github.com/antlr/antlr4/issues)
+4. [RRD for Antlr4](https://github.com/bkiers/rrd-antlr4)
+5. [RRD for Antlr4 Maven Plugin](https://github.com/flashpixx/RRD-ANTLR4)
 

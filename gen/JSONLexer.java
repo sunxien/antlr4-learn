@@ -96,7 +96,7 @@ public class JSONLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "JSONLexer.g4"; }
+	public String getGrammarFileName() { return "src/main/antlr4/JSONLexer.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

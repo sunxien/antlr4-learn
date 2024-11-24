@@ -87,7 +87,7 @@ public class CSVLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "CSVLexer.g4"; }
+	public String getGrammarFileName() { return "src/main/antlr4/CSVLexer.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

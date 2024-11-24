@@ -77,7 +77,7 @@ public class ExpressionParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "Expression.g4.bak"; }
+	public String getGrammarFileName() { return "src/main/antlr4/Expression.g4.bak"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
