@@ -6,17 +6,18 @@ options {
 
 import CSVLexer;
 
-@header{
-package org.apache.antlr4;
-}
+//@header{
+//package org.apache.antlr4;
+//}
 
-file : header? rows ;
+file : header? rowset ;
 
 header : fields ;
-rows : fields* ;
+rowset : fields* ;
 
 fields : field (COMMA field)* NEWLINE? ;
 
-field : PLAIN_TEXT
-      | STRING_VALUE
+field : PLAIN_TEXT   # text
+      | STRING_VAL   # string
+      |              # empty
       ;

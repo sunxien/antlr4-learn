@@ -1,11 +1,17 @@
 lexer grammar CSVLexer;
 
+@header{
+package org.apache.antlr4;
+}
+
 NEWLINE : '\r'?'\n' ;
 
-WS : [ \r\t\n]+ -> skip ;
+//WS : [ \r\t\n]+ -> skip ;
+WS : [ \r\t\n]+ -> channel(HIDDEN) ;
 
 DOT : '.' ;
 COMMA : ',' ;
+
 SINGLE_QUOTA : '\'' ;
 DOUBLE_QUOTA : '"' ;
 
@@ -13,7 +19,7 @@ PLAIN_TEXT : ~[,\r\n"'\\]+ ;
 
 // what is nongreedy subrule?
 // e.g: ('\'\''|~'\'')*    and   ('\'\''|~'\'')*?
-STRING_VALUE : SINGLE_QUOTA ('\'\'' | ~'\'')* SINGLE_QUOTA
-             | DOUBLE_QUOTA ('\\"' | '""' | ~'"')* DOUBLE_QUOTA
-             ;
+STRING_VAL : SINGLE_QUOTA ('\'\'' | ~'\'')* SINGLE_QUOTA
+           | DOUBLE_QUOTA ('\\"' | '""' | ~'"')* DOUBLE_QUOTA
+           ;
 
