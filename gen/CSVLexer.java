@@ -1,4 +1,4 @@
-// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/CSVLexer.g4 by ANTLR 4.13.2
+// Generated from /Users/sunxien/Repository/git/antlr4-learn/src/main/resources/CSVLexer.g4.bak by ANTLR 4.13.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -87,7 +87,7 @@ public class CSVLexer extends Lexer {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "src/main/antlr4/CSVLexer.g4"; }
+	public String getGrammarFileName() { return "src/main/antlr4/CSVLexer.g4.bak"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
